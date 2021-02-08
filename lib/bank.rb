@@ -7,4 +7,8 @@ class Bank
     def get_balance
         @balance
     end 
+
+    def deposit(date,amount)  
+        @balance += amount 
+    end 
 end 
