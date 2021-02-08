@@ -1,11 +1,11 @@
 
 class Bank 
 
-    attr_reader :balance, :bank_statement_array
+    attr_reader :balance, :transaction_history
 
     def initialize 
         @balance = 0
-        @bank_statement_array = []
+        @transaction_history = []
     end 
 
     def deposit(date,amount)  
@@ -13,14 +13,15 @@ class Bank
         saving_bank_action_data(date,amount)
     end 
 
-    def withdraw(date,amount)  
+    def withdraw(date,amount) 
+        raise 'Not enough funds' if (amount > @balance)  
         @balance -= amount
         saving_bank_action_data(date,-1 * amount)
     end 
 
     def show_bank_statement
         puts "date || credit || debit || balance"
-        @bank_statement_array.reverse.each do |i|
+        @transaction_history.reverse.each do |i|
             if i[1].negative?
                 puts "#{i[0]} || || #{-1 * i[1]}  || #{i[2]}"
             else 
@@ -32,7 +33,7 @@ class Bank
 private 
 
     def saving_bank_action_data(date,amount)
-        @bank_statement_array << ([date,amount,self.balance])
+        @transaction_history << ([date,amount,self.balance])
     end 
 
 end 

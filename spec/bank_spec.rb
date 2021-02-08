@@ -20,16 +20,21 @@ describe Bank do
         it 'Depositing 500 will make the balance change to 500' do
             subject.deposit(day,500.0)
             expect(subject.balance).to eq 500.0
-            expect(subject.bank_statement_array).to eq ([['14/01/2012',500.0,500.0]])
+            expect(subject.transaction_history).to eq ([['14/01/2012',500.0,500.0]])
         end 
     end 
 
     describe 'withdraw' do
-        it 'Withdrawing 500 from a total of 1500 will change the balance to 1000' do
+
+        it 'Will raise an error if the withdrawal amount is more than the balance' do
+            expect { subject.withdraw(day,100) }.to raise_error 'Not enough funds'
+        end 
+
+        it 'Withdrawing 1500 from a balance of 1500 will change the balance to 0' do
             subject.deposit(day,1500.0)
-            subject.withdraw(day,500.0)
-            expect(subject.balance).to eq 1000.0
-            expect(subject.bank_statement_array).to eq ([['14/01/2012',1500.0,1500.0],['14/01/2012',-500.0,1000.0]])
+            subject.withdraw(day_two,1500.0)
+            expect(subject.balance).to eq 0.0
+            expect(subject.transaction_history).to eq ([['14/01/2012',1500.0,1500.0],['18/01/2012',-1500.0,0.0]])
         end 
     end 
 
