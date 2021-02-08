@@ -1,7 +1,7 @@
 # Bank-tech-test
 
 # Specification
-# #Requirements
+# Requirements
 
 You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
 Deposits, withdrawal.
