@@ -32,18 +32,21 @@ class Bank
   end
 
   def saving_transaction_history(amount)
-    @transaction_history << { date: Time.now , amount: amount, current_balance: balance}
+    @transaction_history << { date: Time.now, amount: amount, current_balance: balance }
   end
 
   def printing_transaction_data
     @transaction_history.reverse.each do |i|
-        #This IF statement formats each data in the correct way to show to the user. Data will be shown in the correct format and numbers will be shown with .00 at the end. 
+      # This IF statement formats each data in the correct way to show to the user. Data will be shown in the correct format and numbers will be shown with .00 at the end.
       if i[:amount].negative?
-        puts "#{i[:date].strftime('%d/%m/%Y')} || || #{format('%.2f', (-1 * i[:amount]))}  || #{format('%.2f', (i[:current_balance]))}"
+        puts "#{i[:date].strftime('%d/%m/%Y')} || || #{format('%.2f',
+                                                              (-1 * i[:amount]))}  || #{format('%.2f',
+                                                                                               (i[:current_balance]))}"
       else
-        puts "#{i[:date].strftime('%d/%m/%Y')} || #{format('%.2f', (i[:amount]))} ||  || #{format('%.2f', (i[:current_balance]))}"
+        puts "#{i[:date].strftime('%d/%m/%Y')} || #{format('%.2f',
+                                                           (i[:amount]))} ||  || #{format('%.2f',
+                                                                                          (i[:current_balance]))}"
       end
     end
   end
-  
 end
