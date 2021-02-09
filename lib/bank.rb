@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Bank
   attr_reader :balance, :transaction_history
 
@@ -8,17 +6,18 @@ class Bank
     @transaction_history = []
   end
 
-  def deposit(date, amount)
+  def deposit(amount)
     raise "Can't deposit £0 or less" if amount <= 0
-    @balance += amount
-    saving_bank_action_data(date, amount)
+
+    update_balance(amount)
+    saving_bank_action_data(amount)
   end
 
-  def withdraw(date, amount)
+  def withdraw(amount)
     raise 'Not enough funds' if amount > @balance
 
-    @balance -= amount
-    saving_bank_action_data(date, -1 * amount)
+    update_balance(-1 * amount)
+    saving_bank_action_data(-1 * amount)
   end
 
   def show_bank_statement
@@ -28,18 +27,26 @@ class Bank
 
   private
 
-  def saving_bank_action_data(date, amount)
-    @transaction_history << ([date, amount, balance])
+  def update_balance(amount)
+    @balance += amount
+  end
+
+  def current_date
+    Time.now
+  end
+
+  def saving_bank_action_data(amount)
+    @transaction_history << { date: current_date, amount: amount, current_balance: balance}
   end
 
   def printing_transaction_data
     @transaction_history.reverse.each do |i|
-        if i[1].negative?
-          puts "#{i[0]} || || #{('%.2f' % (-1 * i[1]))}  || #{('%.2f' % (i[2]))}"
-        else
-          puts "#{i[0]} || #{('%.2f' % (i[1]))} ||  || #{('%.2f' % (i[2]))}"
-        end
+      if i[:amount].negative?
+        puts "#{i[:date].strftime('%d/%m/%Y')} || || #{format('%.2f', (-1 * i[:amount]))}  || #{format('%.2f', (i[:current_balance]))}"
+      else
+        puts "#{i[:date].strftime('%d/%m/%Y')} || #{format('%.2f', (i[:amount]))} ||  || #{format('%.2f', (i[:current_balance]))}"
       end
-  end 
-
+    end
+  end
+  
 end
