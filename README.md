@@ -17,3 +17,11 @@ Data can be kept in memory (it doesn't need to be stored to a database or anythi
 ![Screenshot 2021-02-09 at 11 44 54](https://user-images.githubusercontent.com/37899538/107359297-6bd62100-6acc-11eb-864b-c2371fde3b90.png)
 
 ---------------------
+
+## User Stories 
+
+As a user\
+So i can save money\
+I'd like to be able to make an deposit\
+
+
