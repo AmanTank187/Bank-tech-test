@@ -22,8 +22,12 @@ Data can be kept in memory (it doesn't need to be stored to a database or anythi
 
 As a user\
 So i can save money\
-I'd like to be able to make an deposit
+I'd like to be able to make a deposit\
 
 ![Screenshot 2021-02-09 at 11 54 11](https://user-images.githubusercontent.com/37899538/107360218-8957ba80-6acd-11eb-9e2b-875b88534f0c.png)
 
+As a user\
+So i can buy some clothes\
+I'd like to withdraw my money\
 
+![Screenshot 2021-02-09 at 11 56 12](https://user-images.githubusercontent.com/37899538/107360415-d045b000-6acd-11eb-9eec-a204a1eb077a.png)
