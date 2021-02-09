@@ -31,12 +31,8 @@ class Bank
     @balance += amount
   end
 
-  def current_date
-    Time.now
-  end
-
   def saving_bank_action_data(amount)
-    @transaction_history << { date: current_date, amount: amount, current_balance: balance}
+    @transaction_history << { date: Time.now , amount: amount, current_balance: balance}
   end
 
   def printing_transaction_data
