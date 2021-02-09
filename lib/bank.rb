@@ -9,6 +9,7 @@ class Bank
   end
 
   def deposit(date, amount)
+    raise "Can't deposit £0 or less" if amount <= 0
     @balance += amount
     saving_bank_action_data(date, amount)
   end
@@ -22,13 +23,7 @@ class Bank
 
   def show_bank_statement
     puts 'date || credit || debit || balance'
-    @transaction_history.reverse.each do |i|
-      if i[1].negative?
-        puts "#{i[0]} || || #{-1 * i[1]}  || #{i[2]}"
-      else
-        puts "#{i[0]} || #{i[1]} ||  || #{i[2]}"
-      end
-    end
+    printing_transaction_data
   end
 
   private
@@ -36,4 +31,15 @@ class Bank
   def saving_bank_action_data(date, amount)
     @transaction_history << ([date, amount, balance])
   end
+
+  def printing_transaction_data
+    @transaction_history.reverse.each do |i|
+        if i[1].negative?
+          puts "#{i[0]} || || #{('%.2f' % (-1 * i[1]))}  || #{('%.2f' % (i[2]))}"
+        else
+          puts "#{i[0]} || #{('%.2f' % (i[1]))} ||  || #{('%.2f' % (i[2]))}"
+        end
+      end
+  end 
+
 end
