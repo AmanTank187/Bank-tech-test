@@ -50,7 +50,7 @@ I'd like to see my transaction history
 * Open 'IRB'
 * require './lib/bank.rb' 
 * Create a new class in irb e.g. 'newbank = Bank.new' 
-* Interact with the app by calling deposit , withdraw or show_bank_statement\
+* Interact with the app by calling deposit , withdraw or show_bank_statement
   - newbank.deposit(400)
   - newbank.withraw(20)
   - newbank.show_bank_statement => bank statement will shown
