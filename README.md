@@ -15,3 +15,5 @@ Data can be kept in memory (it doesn't need to be stored to a database or anythi
 * Then she would see
 
 ![Screenshot 2021-02-09 at 11 44 54](https://user-images.githubusercontent.com/37899538/107359297-6bd62100-6acc-11eb-864b-c2371fde3b90.png)
+
+---------------------
