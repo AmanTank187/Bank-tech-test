@@ -32,8 +32,27 @@ I'd like to withdraw my money
 
 ![Screenshot 2021-02-09 at 11 56 12](https://user-images.githubusercontent.com/37899538/107360415-d045b000-6acd-11eb-9eec-a204a1eb077a.png)
 
-As a user 
-So i can track my spendings
+As a user\
+So i can track my spendings\
 I'd like to see my transaction history
 
 ![Screenshot 2021-02-09 at 12 09 01](https://user-images.githubusercontent.com/37899538/107361634-9b3a5d00-6acf-11eb-921c-55507b9e673b.png)
+
+---------------------
+
+## How to run the project 
+
+### Follow these steps:
+
+* Git clone this repo
+* CD into Bank-tech-test
+* run 'Bundle install'
+* Open 'IRB'
+* require './lib/bank.rb' 
+* Create a new class in irb e.g. 'newbank = Bank.new' 
+* Interact with the app by calling deposit , withdraw or show_bank_statement\
+  - newbank.deposit(400)\
+  - newbank.withraw(20)\
+  - newbank.show_bank_statement => bank statement will shown
+* Run 'rspec' to see the tests
+
