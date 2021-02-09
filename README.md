@@ -62,6 +62,6 @@ I'd like to see my transaction history
 
 ## My Approach
 
-When completing this tech test i decided i wanted to complete small tasks at a time with the help of TDD. I would write a simple tests and pass it in the easiest way and then refactor the code until i felt it passed my user story.\
+When completing this tech test i decided i wanted to complete small tasks at a time with the help of TDD. I would write a simple tests and pass it in the easiest way and then refactor the code until i felt it passed my user story.
 
-I kept the code simple and slowly built it up, for example at the start my withdraw and deposit functions could only update the balance but at the point of writing this they can raise an error if insufficient funds are passed through.\
+I kept the code simple and slowly built it up, for example at the start my withdraw and deposit functions could only update the balance but at the point of writing this they can raise an error if insufficient funds are passed through.
