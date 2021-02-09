@@ -56,3 +56,5 @@ I'd like to see my transaction history
   - newbank.show_bank_statement => bank statement will shown
 * Run 'rspec' to see the tests and coverage 
 
+![Screenshot 2021-02-09 at 12 17 06](https://user-images.githubusercontent.com/37899538/107362496-bc4f7d80-6ad0-11eb-9613-ba974d24b313.png)
+
