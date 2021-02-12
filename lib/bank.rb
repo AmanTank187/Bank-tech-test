@@ -1,11 +1,13 @@
 require_relative 'transaction'
+require_relative 'format_string_statement'
 
 class Bank
-  attr_reader :balance, :transaction_history
+  attr_reader :balance
 
-  def initialize
+  def initialize(format)
     @balance = 0
     @transaction_history = []
+    @formatter = format
   end
 
   def deposit(amount)
@@ -23,11 +25,14 @@ class Bank
   end
 
   def show_bank_statement
-    puts 'date || credit || debit || balance'
+    puts @formatter.get_header
     printing_transaction_data
   end
 
   private
+
+  attr_accessor  :transaction_history
+
 
   def update_balance(amount)
     @balance += amount
@@ -38,18 +43,9 @@ class Bank
   end
 
   def printing_transaction_data
-    @transaction_history.reverse.each do |i|
-      # This IF statement formats each data in the correct way to show to the user. Data will be shown in the correct format and numbers will be shown with .00 at the end.
-      if i.amount.negative?
-        puts "#{(i.date).strftime('%d/%m/%Y')} || || #{format('%.2f',
-                                                              (-1 * i.amount))}  || #{format('%.2f',
-                                                                                               (i.current_balance))}"
-      else
-        puts "#{(i.date).strftime('%d/%m/%Y')} || #{format('%.2f',
-                                                           (i.amount))} ||  || #{format('%.2f',
-                                                                                          (i.current_balance))}"
-      end
-    end
+    @transaction_history.reverse.each do |transaction|
+      puts @formatter.format_statement(transaction)
+    end 
   end
 end
 

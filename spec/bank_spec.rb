@@ -6,7 +6,7 @@ describe Bank do
   today = Time.now.strftime('%d/%m/%Y')
 
   before :each do
-    @my_account = Bank.new
+    @my_account = Bank.new(FormatStringStatement.new)
   end
 
   describe 'get_balance' do
