@@ -11,11 +11,8 @@
           1,
           null,
           1,
-          7,
+          6,
           null,
-          null,
-          1,
-          1,
           null,
           1,
           1,
@@ -51,6 +48,9 @@
           null,
           1,
           null,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -65,11 +65,13 @@
       "/Users/amantank/Desktop/ruby projects/Course/Tech tests/Bank-tech-test/lib/bank.rb": {
         "lines": [
           1,
+          null,
+          1,
           1,
           null,
           1,
-          8,
-          8,
+          6,
+          6,
           null,
           null,
           1,
@@ -112,6 +114,43 @@
           2,
           2,
           2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/amantank/Desktop/ruby projects/Course/Tech tests/Bank-tech-test/lib/transaction.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          7,
+          7,
+          7,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/amantank/Desktop/ruby projects/Course/Tech tests/Bank-tech-test/spec/transaction_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -119,6 +158,6 @@
         ]
       }
     },
-    "timestamp": 1612881359
+    "timestamp": 1613125415
   }
 }

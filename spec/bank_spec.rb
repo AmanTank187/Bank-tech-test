@@ -9,9 +9,6 @@ describe Bank do
     @my_account = Bank.new
   end
 
-  it 'Is an instance of the bank class' do
-    expect(subject).to be_instance_of(Bank)
-  end
   describe 'get_balance' do
     it 'It has a balance of 0 when the class is made' do
       expect(@my_account.balance).to eq 0.00
@@ -44,11 +41,14 @@ describe Bank do
 
   describe 'show_bank_statement' do
     # Saving the expected print statement as a variable so it can be tested in multiple places.
-    bank_statement_string = "date || credit || debit || balance\n#{today} || || 500.00  || 2000.00\n#{today} || 1000.00 ||  || 2500.00\n#{today} || 1500.00 ||  || 1500.00\n"
+    bank_statement_string = "date || credit || debit || balance\n25/02/2021 || || 500.00  || 2000.00\n15/02/2021 || 1000.00 ||  || 2500.00\n13/02/2021 || 1500.00 ||  || 1500.00\n"
 
     it 'Should print out the bank statement after user has done transactions' do
+      allow(Time).to receive(:now).and_return Time.new(2021,2,13)
       @my_account.deposit(1500)
+      allow(Time).to receive(:now).and_return Time.new(2021,2,15)
       @my_account.deposit(1000)
+      allow(Time).to receive(:now).and_return Time.new(2021,2,25)
       @my_account.withdraw(500)
       # Using .output and .to_stdout to check if the table is being printed out to the console.
       expect { @my_account.show_bank_statement }.to output(bank_statement_string).to_stdout
